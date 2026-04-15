@@ -18,12 +18,15 @@ DBD += wfSim.dbd
 
 # wfSim.dbd will be made up from these files:
 wfSim_DBD += base.dbd
+wfSim_DBD += pscCore.dbd
 
-# Include dbd files from all support applications:
-#wfSim_DBD += xxx.dbd
+wfSim_LIBS += pscCore
 
-# Add all the support libraries needed by this IOC
-#wfSim_LIBS += xxx
+ifdef PVXS_MAJOR_VERSION # prefer v2
+nasaAcq
+wfSim_DBD += pvxsIoc.dbd
+wfSim_LIBS += pvxsIoc pvxs
+endif
 
 # wfSim_registerRecordDeviceDriver.cpp derives from wfSim.dbd
 wfSim_SRCS += wfSim_registerRecordDeviceDriver.cpp
