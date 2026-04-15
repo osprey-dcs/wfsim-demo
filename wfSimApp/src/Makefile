@@ -23,7 +23,6 @@ wfSim_DBD += pscCore.dbd
 wfSim_LIBS += pscCore
 
 ifdef PVXS_MAJOR_VERSION # prefer v2
-nasaAcq
 wfSim_DBD += pvxsIoc.dbd
 wfSim_LIBS += pvxsIoc pvxs
 endif

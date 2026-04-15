@@ -1,0 +1,50 @@
+include "psc-ctrl.db"
+
+record(bi, "$(P)oncon_") {
+    field(DTYP, "PSC On Connect")
+    field(INP , "@$(NAME)")
+    field(SCAN, "I/O Intr")
+    field(FLNK, "$(P)cmd_")
+}
+
+record(ao, "$(P)Rate-SP") {
+    field(DTYP, "PSC Reg F32")
+    field(OUT , "@$(NAME) 11 0")
+    field(PINI, "YES")
+    field(VAL , "10.0")
+    field(EGU , "Hz")
+    field(PREC, "1")
+    field(DRVL, "0")
+    field(DRVH, "1000000") # optimism!
+    field(FLNK, "$(P)cmd_")
+}
+record(longout, "$(P)cmd_") {
+    field(DTYP, "PSC Ctrl Send")
+    field(OUT , "@$(NAME)")
+    field(VAL , "11")
+    field(FLNK, "$(P)Send-Cmd")
+}
+
+substitute "CH=C1:,OFF12=12,OFF_AMP=4,OFF_FREQ=8"
+include "wfsimchannel.template"
+
+substitute "CH=C2:,OFF12=16,OFF_AMP=12,OFF_FREQ=16"
+include "wfsimchannel.template"
+
+substitute "CH=C3:,OFF12=20,OFF_AMP=20,OFF_FREQ=24"
+include "wfsimchannel.template"
+
+substitute "CH=C4:,OFF12=24,OFF_AMP=28,OFF_FREQ=32"
+include "wfsimchannel.template"
+
+substitute "CH=C5:,OFF12=28,OFF_AMP=36,OFF_FREQ=40"
+include "wfsimchannel.template"
+
+substitute "CH=C6:,OFF12=32,OFF_AMP=44,OFF_FREQ=48"
+include "wfsimchannel.template"
+
+substitute "CH=C7:,OFF12=36,OFF_AMP=52,OFF_FREQ=56"
+include "wfsimchannel.template"
+
+substitute "CH=C8:,OFF12=40,OFF_AMP=60,OFF_FREQ=64"
+include "wfsimchannel.template"
