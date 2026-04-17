@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <macros>
+    <P>TST:</P>
+  </macros>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Waveform Generator Simulation</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="template" version="2.0.0">
+    <name>Channel Controls</name>
+    <file>_wfsimchan.bob</file>
+    <instances>
+      <instance>
+        <macros>
+          <CH>C1:</CH>
+        </macros>
+      </instance>
+      <instance>
+        <macros>
+          <CH>C2:</CH>
+        </macros>
+      </instance>
+      <instance>
+        <macros>
+          <CH>C3:</CH>
+        </macros>
+      </instance>
+      <instance>
+        <macros>
+          <CH>C4:</CH>
+        </macros>
+      </instance>
+      <instance>
+        <macros>
+          <CH>C5:</CH>
+        </macros>
+      </instance>
+      <instance>
+        <macros>
+          <CH>C6:</CH>
+        </macros>
+      </instance>
+      <instance>
+        <macros>
+          <CH>C7:</CH>
+        </macros>
+      </instance>
+      <instance>
+        <macros>
+          <CH>C8:</CH>
+        </macros>
+      </instance>
+    </instances>
+    <x>10</x>
+    <y>70</y>
+    <width>390</width>
+    <height>310</height>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>Plot_2</name>
+    <x>410</x>
+    <y>31</y>
+    <width>430</width>
+    <height>310</height>
+    <show_toolbar>true</show_toolbar>
+    <x_axis>
+      <title>X</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Y</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>C1</name>
+        <x_pv></x_pv>
+        <y_pv>$(P)C1:V-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>C2</name>
+        <x_pv></x_pv>
+        <y_pv>$(P)C2:V-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>C3</name>
+        <x_pv></x_pv>
+        <y_pv>$(P)C3:V-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>C4</name>
+        <x_pv></x_pv>
+        <y_pv>$(P)C4:V-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>C5</name>
+        <x_pv></x_pv>
+        <y_pv>$(P)C5:V-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="255" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>C6</name>
+        <x_pv></x_pv>
+        <y_pv>$(P)C6:V-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="234" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>C7</name>
+        <x_pv></x_pv>
+        <y_pv>$(P)C7:V-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="255" green="127" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>C8</name>
+        <x_pv></x_pv>
+        <y_pv>$(P)C8:V-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="191" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Trigger rate</text>
+    <x>30</x>
+    <y>390</y>
+    <width>120</width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>$(P)Rate-SP</pv_name>
+    <x>160</x>
+    <y>390</y>
+    <width>110</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Connected</text>
+    <x>30</x>
+    <y>415</y>
+    <width>120</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Last Message</text>
+    <x>30</x>
+    <y>440</y>
+    <width>120</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(P)Msg-I</pv_name>
+    <x>160</x>
+    <y>440</y>
+    <width>110</width>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(P)Conn-Sts</pv_name>
+    <x>160</x>
+    <y>415</y>
+    <width>110</width>
+    <off_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <square>true</square>
+    <labels_from_pv>true</labels_from_pv>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Amplitude</text>
+    <x>70</x>
+    <y>50</y>
+    <width>80</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Frequency</text>
+    <x>180</x>
+    <y>50</y>
+    <width>80</width>
+  </widget>
+</display>
