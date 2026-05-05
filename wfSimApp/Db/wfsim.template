@@ -25,26 +25,47 @@ record(longout, "$(P)cmd_") {
     field(FLNK, "$(P)Send-Cmd")
 }
 
-substitute "CH=C1:,OFF12=12,OFF_AMP=4,OFF_FREQ=8"
+substitute "CH=1,OFF12=12,OFF_AMP=4,OFF_FREQ=8"
 include "wfsimchannel.template"
 
-substitute "CH=C2:,OFF12=16,OFF_AMP=12,OFF_FREQ=16"
+substitute "CH=2,OFF12=16,OFF_AMP=12,OFF_FREQ=16"
 include "wfsimchannel.template"
 
-substitute "CH=C3:,OFF12=20,OFF_AMP=20,OFF_FREQ=24"
+substitute "CH=3,OFF12=20,OFF_AMP=20,OFF_FREQ=24"
 include "wfsimchannel.template"
 
-substitute "CH=C4:,OFF12=24,OFF_AMP=28,OFF_FREQ=32"
+substitute "CH=4,OFF12=24,OFF_AMP=28,OFF_FREQ=32"
 include "wfsimchannel.template"
 
-substitute "CH=C5:,OFF12=28,OFF_AMP=36,OFF_FREQ=40"
+substitute "CH=5,OFF12=28,OFF_AMP=36,OFF_FREQ=40"
 include "wfsimchannel.template"
 
-substitute "CH=C6:,OFF12=32,OFF_AMP=44,OFF_FREQ=48"
+substitute "CH=6,OFF12=32,OFF_AMP=44,OFF_FREQ=48"
 include "wfsimchannel.template"
 
-substitute "CH=C7:,OFF12=36,OFF_AMP=52,OFF_FREQ=56"
+substitute "CH=7,OFF12=36,OFF_AMP=52,OFF_FREQ=56"
 include "wfsimchannel.template"
 
-substitute "CH=C8:,OFF12=40,OFF_AMP=60,OFF_FREQ=64"
+substitute "CH=8,OFF12=40,OFF_AMP=60,OFF_FREQ=64"
 include "wfsimchannel.template"
+
+record(aai, "$(P)Labels_") {
+    field(FTVL, "STRING")
+    field(NELM, "8")
+    field(INP , {const:["CH1","CH2","CH3","CH4","CH5","CH6","CH7","CH8"]})
+    info(Q:group, {
+        "$(P)V":{
+            +id:"epics:nt/NTTable:1.0",
+            "labels":{+type:"plain", +channel:"VAL"}
+        }
+    })
+}
+
+record("*", "$(P)C1:V-I") {
+    field(PHAS, "1") # order after other CH*V-I
+    info(Q:group, {
+        "$(P)V":{
+            "value.CH1":{+type:"plain", +channel:"VAL", +trigger:"*"}
+        }
+    })
+}

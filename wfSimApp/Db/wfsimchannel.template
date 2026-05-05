@@ -1,5 +1,5 @@
 
-record(ao, "$(P)$(CH)Freq-SP") {
+record(ao, "$(P)C$(CH):Freq-SP") {
     field(DTYP, "PSC Reg F32")
     field(OUT , "@$(NAME) 11 $(OFF_FREQ=0)")
     field(PINI, "YES")
@@ -7,7 +7,7 @@ record(ao, "$(P)$(CH)Freq-SP") {
     field(EGU , "Hz")
     field(FLNK, "$(P)cmd_")
 }
-record(longout, "$(P)$(CH)Amp-SP") {
+record(longout, "$(P)C$(CH):Amp-SP") {
     field(DTYP, "PSC Reg")
     field(OUT , "@$(NAME) 11 $(OFF_AMP=4)")
     field(PINI, "YES")
@@ -16,7 +16,7 @@ record(longout, "$(P)$(CH)Amp-SP") {
     field(FLNK, "$(P)cmd_")
 }
 
-record(waveform, "$(P)$(CH)V-I") {
+record(waveform, "$(P)C$(CH):V-I") {
     field(FTVL, "DOUBLE")
     field(NELM, "$(NELM=512)")
     field(DTYP, "PSC Block I32 In")
@@ -24,4 +24,9 @@ record(waveform, "$(P)$(CH)V-I") {
     field(SCAN, "I/O Intr")
     field(TSE , "-2")
     info(TimeFromBlock, "4")
+    info(Q:group, {
+        "$(P)V":{
+            "value.CH$(CH)":{+type:"plain", +channel:"VAL"}
+        }
+    })
 }
