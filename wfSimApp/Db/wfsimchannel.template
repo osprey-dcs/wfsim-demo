@@ -22,4 +22,6 @@ record(waveform, "$(P)$(CH)V-I") {
     field(DTYP, "PSC Block I32 In")
     field(INP , "@$(NAME) 12 $(OFF12=0) $(STEP12=32)")
     field(SCAN, "I/O Intr")
+    field(TSE , "-2")
+    info(TimeFromBlock, "4")
 }
