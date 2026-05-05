@@ -93,7 +93,7 @@ class Device:
     async def data_loop(self):
         while True:
             try:
-                await asyncio.sleep(1/self.settings['rate'])
+                await asyncio.sleep(1/float(self.settings['rate']))
                 S = self.settings # snapshot
                 self.pha60 = np.fmod(self.pha60 + np.pi/13, 2*np.pi)
 
