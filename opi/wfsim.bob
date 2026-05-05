@@ -320,4 +320,19 @@
     <y>50</y>
     <width>80</width>
   </widget>
+  <widget type="table" version="2.0.0">
+    <name>Table</name>
+    <pv_name>$(P)V</pv_name>
+    <x>320</x>
+    <y>410</y>
+    <width>620</width>
+    <height>170</height>
+    <columns>
+      <column>
+        <name>Column 1</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+    </columns>
+  </widget>
 </display>
