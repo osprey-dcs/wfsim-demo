@@ -19,6 +19,7 @@ DBD += wfSim.dbd
 # wfSim.dbd will be made up from these files:
 wfSim_DBD += base.dbd
 wfSim_DBD += pscCore.dbd
+wfSim_DBD += wfsim.dbd
 
 wfSim_LIBS += pscCore
 
@@ -29,6 +30,7 @@ endif
 
 # wfSim_registerRecordDeviceDriver.cpp derives from wfSim.dbd
 wfSim_SRCS += wfSim_registerRecordDeviceDriver.cpp
+wfSim_SRCS += wfsub.c
 
 # Build the main IOC entry point on workstation OSs.
 wfSim_SRCS_DEFAULT += wfSimMain.cpp
