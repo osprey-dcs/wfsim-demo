@@ -1,0 +1,20 @@
+record(aao, "$(P)V") {
+    field(FTVL, "DOUBLE")
+    field(NELM, "$(NELM=512)")
+    field(FLNK, "$(P)sub")
+}
+
+record(aSub, "$(P)sub") {
+    field(SNAM, "wfsimScale")
+    field(FTA, "DOUBLE")
+    field(NOA , "$(NELM=512)")
+    field(INPA, "$(P)V NPP MS")
+    field(FTVA, "DOUBLE")
+    field(NOVA, "$(NELM=512)")
+    field(OUTA, "$(P)dB PP MS")
+}
+
+record(aai, "$(P)dB") {
+    field(FTVL, "DOUBLE")
+    field(NELM, "$(NELM=512)")
+}

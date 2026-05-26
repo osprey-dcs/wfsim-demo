@@ -30,3 +30,13 @@ record(waveform, "$(P)C$(CH):V-I") {
         }
     })
 }
+
+record(aSub, "$(P)C$(CH):V_") {
+    field(SNAM, "wfsimScale")
+    field(FTA, "DOUBLE")
+    field(NOA , "$(NELM=512)")
+    field(INPA, "$(P)C$(CH):V-I_ NPP MS")
+    field(FTVA, "DOUBLE")
+    field(NOVA, "$(NELM=512)")
+    field(OUTA, "$(P)C$(CH):V-I PP MS")
+}
