@@ -22,8 +22,7 @@ def build_msg(msgid:int, body:bytes):
 async def sendmsg(writer:asyncio.StreamWriter, msgid:int, body:bytes):
     msg = build_msg(msgid, body)
     writer.write(msg)
-    async with asyncio.timeout(0.1):
-        await writer.drain()
+    await asyncio.wait_for(writer.drain(), timeout=0.1)
 
 class Device:
     def __init__(self):
